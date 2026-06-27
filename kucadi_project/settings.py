@@ -204,8 +204,3 @@ EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.conso
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 ACCOUNT_SIGNUP_REDIRECT_URL = '/'
 
-# Midtrans sandbox configuration
-MIDTRANS_MERCHANT_ID = os.environ.get('MIDTRANS_MERCHANT_ID', 'M333639415')
-MIDTRANS_CLIENT_KEY = os.environ.get('MIDTRANS_CLIENT_KEY', 'Mid-client-nvVOw_7nQXNbd7jU')
-MIDTRANS_SERVER_KEY = os.environ.get('MIDTRANS_SERVER_KEY', 'your-midtrans-server-key-here')
-MIDTRANS_IS_PRODUCTION = os.environ.get('MIDTRANS_IS_PRODUCTION', 'False').lower() in {'1', 'true', 'yes', 'on'}

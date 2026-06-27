@@ -418,10 +418,6 @@ def buy_now(request, product_id):
     return redirect('checkout')
 
 
-def _get_midtrans_client(request=None):
-    server_key = getattr(settings, 'MIDTRANS_SERVER_KEY', 'your-midtrans-server-key-here')
-    is_production = getattr(settings, 'MIDTRANS_IS_PRODUCTION', False)
-
     if not server_key:
         if request:
             messages.error(request, 'MIDTRANS_SERVER_KEY tidak ditemukan atau kosong. Periksa settings.py.')
