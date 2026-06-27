@@ -47,12 +47,16 @@ else:
     DEBUG = DEBUG_VALUE.lower() in {'1', 'true', 'yes', 'on'}
 
 # DIUBAH: Menambahkan domain Render secara dinamis agar tidak error saat online
-DEFAULT_ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'happy-caution-slaw.ngrok-free.dev,127.0.0.1,localhost')
+DEFAULT_ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'happy-caution-slaw.ngrok-free.dev,127.0.0.1,localhost,.vercel.app')
 ALLOWED_HOSTS = [host.strip() for host in DEFAULT_ALLOWED_HOSTS.split(',') if host.strip()]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+VERCEL_URL = os.environ.get('VERCEL_URL')
+if VERCEL_URL:
+    ALLOWED_HOSTS.append(VERCEL_URL)
 
 
 # Application definition
